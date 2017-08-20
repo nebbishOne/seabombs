@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sea Bombs!!!</title>
+	<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+	<script src="libs/phaser.js"></script>
+	<script src="Boot.js"></script>
+	<script src="Preloader.js"></script>
+	<script src="StartMenu.js"></script>
+	<script src="Game.js"></script>
+	<script src="HighScores.js"></script>
+	<style>
+		body {
+			padding: 0;	margin: 0; background-color: #222;
+		}
+		.container {
+			position:relative;
+			height: 800px;
+		}
+		#gameContainer {
+			position: absolute;
+		}
+		#footer {
+			position: absolute;
+			top: 810px;
+			width: 100%;
+			background: #CCC; font: small sans-serif; color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="gameContainer"></div>
+		<div id="footer">
+			<p>Report any issues to <a href="https://github.com/nebbishOne/seabombs/issues" target="_blank">https://github.com/nebbishOne/seabombs/issues</a>.
+			<br>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License</p>.
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onload = function() {
+			var game = new Phaser.Game('100', '100', Phaser.AUTO, 'gameContainer');
+			console.log('1) width = ' + game.width + ' and height = ' + game.height);
+			game.state.add('Boot', SeaBombs.Boot);
+			game.state.add('Preloader', SeaBombs.Preloader);
+			game.state.add('StartMenu', SeaBombs.StartMenu);
+			game.state.add('Game', SeaBombs.Game);
+			game.state.add('HighScores', SeaBombs.HighScores);
+			game.state.start('Boot');
+		};
+	</script>
+</body>
+</html>
