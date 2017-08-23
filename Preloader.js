@@ -14,7 +14,7 @@ SeaBombs.Preloader.prototype = {
 		this.load.image('target', 'images/target.png');
 		this.load.image('waterline', 'images/waterline.png');
 		this.load.image('shot', 'images/shot.png');
-		//this.load.image('explosion', 'images/explosion.png');
+		this.load.image('explosion', 'images/explosion.png');
 		
 		/*this.load.audio('boom1', 'audio/boom1.mp3');
 		this.load.audio('boom2', 'audio/boom2.mp3');
