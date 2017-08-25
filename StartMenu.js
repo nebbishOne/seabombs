@@ -1,6 +1,8 @@
 SeaBombs.StartMenu = function(game) {
     this.startBG;
     this.instr;
+    this.extra;
+    this.extraText;
     this.instructions;
     this.startPrompt;
     this.control;
@@ -19,7 +21,9 @@ SeaBombs.StartMenu.prototype = {
 		this.startBG.events.onInputDown.addOnce(this.startGame, this);
 		this.instr = 'Press Space to fire     Use the mouse to move target up and down     Press P to pause and unpause.';
 		this.instructions = this.add.bitmapText(this.world.centerX-600, this.world.centerY+50, 'eightbitwonder', this.instr, 14);
-		this.startPrompt = this.add.bitmapText(this.world.centerX-220, this.world.centerY+100, 'eightbitwonder', 'Press Space to Start', 24);
+		this.extraText = 'Earn extra time by getting high scores!'
+		this.extra = this.add.bitmapText(this.world.centerX-220, this.world.centerY+100, 'eightbitwonder', this.extraText, 14);
+		this.startPrompt = this.add.bitmapText(this.world.centerX-220, this.world.centerY+200, 'eightbitwonder', 'Press Space to Start', 24);
 
 	},
 

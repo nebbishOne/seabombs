@@ -18,7 +18,7 @@ SeaBombs.Boot.prototype = {
 		this.scale.updateLayout(true);  // true will force screen resize no matter what
 
 		this.input.addPointer();
-		this.stage.backgroundColor = '#222';
+		this.stage.backgroundColor = '#000';
 
 		//console.log('BOOT) width = ' + (this.world.width || '0') + ' and height = ' + (this.world.height || '0'));
 		

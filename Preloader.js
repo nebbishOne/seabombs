@@ -7,14 +7,18 @@ SeaBombs.Preloader = function(game) {
 SeaBombs.Preloader.prototype = {
 	
 	preload: function () {
-		this.load.image('titlescreen', 'images/title.png');
 		this.load.bitmapFont('eightbitwonder', 'fonts/eightbitwonder.png', 'fonts/eightbitwonder.fnt');
+		this.load.image('titlescreen', 'images/title.png');
+		this.load.image('header', 'images/header.png');
 		this.load.image('ship', 'images/ship.png');
-		this.load.image('enemy', 'images/enemy.png');
+		this.load.image('enemy1', 'images/enemy1.png');
+		this.load.image('enemy2', 'images/enemy2.png');
+		this.load.image('enemy3', 'images/enemy3.png');
 		this.load.image('target', 'images/target.png');
 		this.load.image('waterline', 'images/waterline.png');
 		this.load.image('shot', 'images/shot.png');
 		this.load.image('explosion', 'images/explosion.png');
+		this.load.image('enemyexplosion', 'images/enemyexplosion.png');
 		
 		/*this.load.audio('boom1', 'audio/boom1.mp3');
 		this.load.audio('boom2', 'audio/boom2.mp3');

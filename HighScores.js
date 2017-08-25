@@ -10,16 +10,16 @@ SeaBombs.HighScores = function(game) {
 SeaBombs.HighScores.prototype = {
     
     create: function () {
-      this.bg = this.add.image(0, 0, 'bg');
-      this.bg.height = this.world.height;
-      this.bg.width = this.world.width; 
-      this.bg.z = 0;
+      //this.bg = this.add.image(0, 0, 'bg');
+      //this.bg.height = this.world.height;
+      //this.bg.width = this.world.width; 
+      //this.bg.z = 0;
       
       if (!this.game.device.localStorage) {
         console.log('!!!!!!!!!! Cannot set high score - no local storage !!!!!!!!!!');   
       } else {
-        var phs = localStorage.getItem('highScore') ? localStorage.getItem('highScore') : '0';
-        var ns = localStorage.getItem('newestScore') ? localStorage.getItem('newestScore') : 0;
+        var phs = localStorage.getItem('seaBombsHighScore') ? localStorage.getItem('seaBombsHighScore') : '0';
+        var ns = localStorage.getItem('seaBombsNewestScore') ? localStorage.getItem('seaBombsNewestScore') : 0;
         
     		this.highscoretitle = this.add.bitmapText((this.world.width/2)-200,(this.world.height/2)-200, 'eightbitwonder', 'Previous High Score: ' + phs, 20);
     		this.yourscoretitle = this.add.bitmapText((this.world.width/2)-200,(this.world.height/2)-160, 'eightbitwonder', 'Your Score: ' + ns, 20);
@@ -27,10 +27,9 @@ SeaBombs.HighScores.prototype = {
         ns = parseInt(ns, 10);
         if (ns > phs) {
                 console.log('HighScores: replacing high score with newest score');
-                localStorage.setItem('highScore', ns);
+                localStorage.setItem('seaBombsHighScore', ns);
                 this.newhighmessage = this.add.bitmapText((this.world.width/2)-200,(this.world.height/2)-120, 'eightbitwonder', 'You got the new high score!!!', 15);
     		} else { 
-            //alert('ns ' + ns + ' is less than phs ' + phs + ' so not a new high score');
             this.newhighmessage = this.add.bitmapText((this.world.width/2)-200,(this.world.height/2)-120, 'eightbitwonder', 'Try again...', 15);
     		}
       }
